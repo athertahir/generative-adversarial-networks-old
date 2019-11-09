@@ -28,6 +28,6 @@ pip install pydot
 # conda install theano
 # conda install -c conda-forge tensorflow
 
-# conda install pydotplus -y
-# conda install graphviz -y
-# conda install python-graphviz -y
+conda install pydotplus -y
+conda install graphviz -y
+conda install python-graphviz -y
