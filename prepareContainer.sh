@@ -7,21 +7,27 @@
 
 echo 'Installing Dependencies'
 
-pip install opencv-python
+pip install scikit-image
+pip install git+https://www.github.com/keras-team/keras-contrib.git
+pip install h5py
 pip install mtcnn
+
 pip install numpy==1.16.0
 
 pip install pydot
-pip install graphviz
+# pip install pydotplus
+# pip install graphviz
 
-pip install git+https://github.com/rcmalli/keras-vggface.git
+# sudo apt-get install software-properties-common
+# sudo apt-get update
+# sudo yes | add-apt-repository ppa:gviz-adm/graphviz
+# sudo apt-get update
+# sudo yes | apt-get install graphviz
 
-sudo yes | add-apt-repository ppa:gviz-adm/graphviz-dev
-sudo apt-get update
-sudo yes | apt-get install graphviz-dev
 
 # conda install theano
 # conda install -c conda-forge tensorflow
-# conda install graphviz
+
 # conda install pydotplus -y
-conda install graphviz -y
+# conda install graphviz -y
+# conda install python-graphviz -y
