@@ -1,6 +1,7 @@
 # example of generating random samples from X^2
 from numpy.random import rand
 from numpy import hstack
+%matplotlib notebook
 from matplotlib import pyplot
 
 # generate randoms sample from x^2

@@ -2,6 +2,7 @@
 from keras.models import load_model
 from numpy import load
 from numpy import vstack
+%matplotlib notebook
 from matplotlib import pyplot
 from numpy.random import randint
 

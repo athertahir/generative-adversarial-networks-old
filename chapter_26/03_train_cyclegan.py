@@ -15,6 +15,7 @@ from keras.layers import LeakyReLU
 from keras.layers import Activation
 from keras.layers import Concatenate
 from keras_contrib.layers.normalization.instancenormalization import InstanceNormalization
+%matplotlib notebook
 from matplotlib import pyplot
 
 # define the discriminator model

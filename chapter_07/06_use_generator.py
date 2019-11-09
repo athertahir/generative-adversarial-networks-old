@@ -7,6 +7,7 @@ from keras.layers import Reshape
 from keras.layers import Conv2D
 from keras.layers import Conv2DTranspose
 from keras.layers import LeakyReLU
+%matplotlib notebook
 from matplotlib import pyplot
 
 # define the standalone generator model

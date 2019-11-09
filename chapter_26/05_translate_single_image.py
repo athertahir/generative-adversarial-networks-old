@@ -4,6 +4,7 @@ from keras.models import load_model
 from keras_contrib.layers.normalization.instancenormalization import InstanceNormalization
 from keras.preprocessing.image import img_to_array
 from keras.preprocessing.image import load_img
+%matplotlib notebook
 from matplotlib import pyplot
 
 # load an image to the preferred size

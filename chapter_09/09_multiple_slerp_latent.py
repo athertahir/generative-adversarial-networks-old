@@ -9,6 +9,7 @@ from numpy import sin
 from numpy import linspace
 from numpy.linalg import norm
 from keras.models import load_model
+%matplotlib notebook
 from matplotlib import pyplot
 
 # generate points in latent space as input for the generator

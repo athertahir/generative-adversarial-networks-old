@@ -1,6 +1,7 @@
 # example of loading the generator model and generating images
 from keras.models import load_model
 from numpy.random import randn
+%matplotlib notebook
 from matplotlib import pyplot
 
 # generate points in latent space as input for the generator

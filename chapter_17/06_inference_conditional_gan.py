@@ -3,6 +3,7 @@ from numpy import asarray
 from numpy.random import randn
 from numpy.random import randint
 from keras.models import load_model
+%matplotlib notebook
 from matplotlib import pyplot
 
 # generate points in latent space as input for the generator

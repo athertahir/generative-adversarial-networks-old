@@ -1,5 +1,6 @@
 # example of loading the generator model and generating images
 from keras.models import load_model
+%matplotlib notebook
 from matplotlib import pyplot
 from numpy import load
 from numpy import mean

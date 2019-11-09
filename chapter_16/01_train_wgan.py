@@ -17,6 +17,7 @@ from keras.layers import LeakyReLU
 from keras.layers import BatchNormalization
 from keras.initializers import RandomNormal
 from keras.constraints import Constraint
+%matplotlib notebook
 from matplotlib import pyplot
 
 # clip model weights to a given hypercube

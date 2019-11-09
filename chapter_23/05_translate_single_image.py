@@ -3,6 +3,7 @@ from keras.models import load_model
 from keras.preprocessing.image import img_to_array
 from keras.preprocessing.image import load_img
 from numpy import expand_dims
+%matplotlib notebook
 from matplotlib import pyplot
 
 # load an image

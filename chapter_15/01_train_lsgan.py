@@ -16,6 +16,7 @@ from keras.layers import Activation
 from keras.layers import LeakyReLU
 from keras.layers import BatchNormalization
 from keras.initializers import RandomNormal
+%matplotlib notebook
 from matplotlib import pyplot
 
 # define the standalone discriminator model

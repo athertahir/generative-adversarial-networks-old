@@ -1,5 +1,6 @@
 # load the prepared dataset
 from numpy import load
+%matplotlib notebook
 from matplotlib import pyplot
 # load the face dataset
 data = load('maps_256.npz')

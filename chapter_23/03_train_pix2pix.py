@@ -15,6 +15,7 @@ from keras.layers import Concatenate
 from keras.layers import Dropout
 from keras.layers import BatchNormalization
 from keras.layers import LeakyReLU
+%matplotlib notebook
 from matplotlib import pyplot
 
 # define the discriminator model

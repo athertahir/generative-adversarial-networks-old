@@ -19,6 +19,7 @@ from keras.layers import Conv2DTranspose
 from keras.layers import LeakyReLU
 from keras.layers import BatchNormalization
 from keras.layers import Activation
+%matplotlib notebook
 from matplotlib import pyplot
 
 # define the standalone discriminator model

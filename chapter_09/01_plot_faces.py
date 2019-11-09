@@ -2,6 +2,7 @@
 from os import listdir
 from numpy import asarray
 from PIL import Image
+%matplotlib notebook
 from matplotlib import pyplot
 
 # load an image as an rgb numpy array

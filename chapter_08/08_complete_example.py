@@ -13,6 +13,7 @@ from keras.layers import Conv2D
 from keras.layers import Conv2DTranspose
 from keras.layers import LeakyReLU
 from keras.layers import Dropout
+%matplotlib notebook
 from matplotlib import pyplot
 
 # define the standalone discriminator model

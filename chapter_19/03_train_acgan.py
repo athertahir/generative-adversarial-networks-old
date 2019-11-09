@@ -20,6 +20,7 @@ from keras.layers import Embedding
 from keras.layers import Activation
 from keras.layers import Concatenate
 from keras.initializers import RandomNormal
+%matplotlib notebook
 from matplotlib import pyplot
 
 # define the standalone discriminator model

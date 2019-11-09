@@ -5,6 +5,7 @@ from numpy import hstack
 from numpy.random import randn
 from keras.models import load_model
 from keras.utils import to_categorical
+%matplotlib notebook
 from matplotlib import pyplot
 
 # generate points in latent space as input for the generator

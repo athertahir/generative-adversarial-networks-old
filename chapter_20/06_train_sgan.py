@@ -18,6 +18,7 @@ from keras.layers import LeakyReLU
 from keras.layers import Dropout
 from keras.layers import Lambda
 from keras.layers import Activation
+%matplotlib notebook
 from matplotlib import pyplot
 from keras import backend
 

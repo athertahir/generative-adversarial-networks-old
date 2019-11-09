@@ -1,5 +1,6 @@
 # example of loading the fashion_mnist dataset
 from keras.datasets.fashion_mnist import load_data
+%matplotlib notebook
 from matplotlib import pyplot
 # load the images into memory
 (trainX, trainy), (testX, testy) = load_data()

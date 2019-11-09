@@ -1,5 +1,6 @@
 # example of loading and plotting the cifar10 dataset
 from keras.datasets.cifar10 import load_data
+%matplotlib notebook
 from matplotlib import pyplot
 # load the images into memory
 (trainX, trainy), (testX, testy) = load_data()

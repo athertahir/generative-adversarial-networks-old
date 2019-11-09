@@ -6,6 +6,7 @@ from numpy.random import rand
 from numpy.random import randn
 from keras.models import Sequential
 from keras.layers import Dense
+%matplotlib notebook
 from matplotlib import pyplot
 
 # define the standalone discriminator model

@@ -1,6 +1,7 @@
 # example of generating an image for a specific point in the latent space
 from keras.models import load_model
 from numpy import asarray
+%matplotlib notebook
 from matplotlib import pyplot
 # load model
 model = load_model('generator_model_100.h5')
