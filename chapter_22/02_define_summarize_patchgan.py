@@ -1,3 +1,25 @@
+# %%
+'''
+## How to Implement the PatchGAN Discriminator Model
+The discriminator model in the Pix2Pix GAN is implemented as a PatchGAN. The PatchGAN
+is designed based on the size of the receptive field, sometimes called the effective receptive field.
+The receptive field is the relationship between one output activation of the model to an area on
+the input image (actually volume as it proceeded down the input channels). A PatchGAN with
+the size 70 × 70 is used, which means that the output (or each output) of the model maps to a
+70 × 70 square of the input image. In effect, a 70 × 70 PatchGAN will classify 70 × 70 patches
+of the input image as real or fake.
+'''
+
+# %%
+'''
+The model is trained with a batch size of one image and the Adam version of stochastic
+gradient descent is used with a small learning range and modest momentum. The loss for the
+discriminator is weighted by 50% for each model update. Tying this all together, we can define
+a function named define discriminator() that creates the 70 × 70 PatchGAN discriminator
+model. The complete example of defining the model is listed below.
+'''
+
+# %%
 # example of defining a 70x70 patchgan discriminator model
 from keras.optimizers import Adam
 from keras.initializers import RandomNormal

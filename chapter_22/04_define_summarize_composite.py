@@ -1,3 +1,26 @@
+# %%
+'''
+## How to Implement Adversarial and L1 Loss
+The discriminator model can be updated directly, whereas the generator model must be updated
+via the discriminator model. This can be achieved by defining a new composite model in Keras
+that connects the output of the generator model as input to the discriminator model. The
+discriminator model can then predict whether a generated image is real or fake. We can update
+the weights of the composite model in such a way that the generated image has the label of
+real instead of fake, which will cause the generator weights to be updated towards generating a
+better fake image. We can also mark the discriminator weights as not trainable in this context,
+to avoid the misleading update. Additionally, the generator needs to be updated to better match
+the targeted translation of the input image. This means that the composite model must also
+output the generated image directly, allowing it to be compared to the target image. Therefore,
+we can summarize the inputs and outputs of this composite model as follows:
+❼ Inputs: Source image
+❼ Outputs: Classification of real/fake, generated target image.
+The weights of the generator will be updated via both adversarial loss via the discriminator
+output and L1 loss via the direct image output. The loss scores are added together, where the
+L1 loss is treated as a regularizing term and weighted via a hyperparameter called lambda (λ),
+set to 100.
+'''
+
+# %%
 # example of defining a composite model for training the generator model
 from keras.optimizers import Adam
 from keras.initializers import RandomNormal
@@ -142,3 +165,10 @@ gan_model = define_gan(g_model, d_model, image_shape)
 gan_model.summary()
 # plot the model
 plot_model(gan_model, to_file='gan_model_plot.png', show_shapes=True, show_layer_names=True)
+
+# %%
+'''
+Running the example first summarizes the composite model, showing the 256 × 256 image
+input, the same shaped output from model 2 (the generator) and the PatchGAN classification
+prediction from model 1 (the discriminator)
+'''

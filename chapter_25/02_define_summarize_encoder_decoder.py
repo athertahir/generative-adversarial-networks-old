@@ -1,3 +1,27 @@
+# %%
+'''
+## How to Implement the CycleGAN Generator Model
+The CycleGAN Generator model takes an image as input and generates a translated image as
+output. The model uses a sequence of downsampling convolutional blocks to encode the input
+image, a number of residual network (ResNet) convolutional blocks to transform the image, and
+a number of upsampling convolutional blocks to generate the output image.
+
+Let c7s1-k denote a 7 × 7 Convolution-InstanceNormReLU layer with k filters and
+stride 1. dk denotes a 3 × 3 Convolution-InstanceNorm-ReLU layer with k filters
+and stride 2. Reflection padding was used to reduce artifacts. Rk denotes a residual
+block that contains two 3 × 3 convolutional layers with the same number of filters on
+both layer. uk denotes a 3 × 3 fractional-strided-ConvolutionInstanceNorm-ReLU
+layer with k filters and stride 1 2.
+
+First, we need a function to define the ResNet blocks. These are blocks comprised of two
+3 × 3 CNN layers where the input to the block is concatenated to the output of the block,
+channel-wise. This is implemented in the resnet block() function that creates two ConvInstanceNorm blocks with 3 × 3 filters and 1 × 1 stride and without a ReLU activation after the
+second block, matching the official Torch implementation in the build conv block() function.
+Same padding is used instead of reflection padded recommended in the paper for simplicity.
+# generator a resnet block
+'''
+
+# %%
 # example of an encoder-decoder generator for the cyclegan
 from keras.models import Model
 from keras.models import Input

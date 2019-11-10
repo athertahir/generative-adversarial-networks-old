@@ -1,3 +1,45 @@
+# %%
+'''
+## How to Implement the U-Net Generator Model
+The generator model for the Pix2Pix GAN is implemented as a U-Net. The U-Net model is an
+encoder-decoder model for image translation where skip connections are used to connect layers
+in the encoder with corresponding layers in the decoder that have the same sized feature maps.
+The encoder part of the model is comprised of convolutional layers that use a 2 × 2 stride to
+downsample the input source image down to a bottleneck layer. The decoder part of the model
+reads the bottleneck output and uses transpose convolutional layers to upsample to the required
+output image size
+'''
+
+# %%
+
+
+# %%
+'''
+Skip connections are added between the layers with the same sized feature maps so that the
+first downsampling layer is connected with the last upsampling layer, the second downsampling
+layer is connected with the second last upsampling layer, and so on. The connections concatenate
+the channels of the feature map in the downsampling layer with the feature map in the upsampling
+layer.
+
+Unlike traditional generator models in the GAN architecture, the U-Net generator does not
+take a point from the latent space as input. Instead, dropout layers are used as a source of
+randomness both during training and when the model is used to make a prediction, e.g. generate
+an image at inference time. Similarly, batch normalization is used in the same way during
+training and inference, meaning that statistics are calculated for each batch and not fixed at
+the end of the training process. This is referred to as instance normalization, specifically when
+the batch size is set to 1 as it is with the Pix2Pix model.
+'''
+
+# %%
+'''
+Running the example first summarizes the model. The output of the model summary was
+omitted here for brevity. The model has a single input and output, but the skip connections
+make the summary difficult to read. A plot of the model is created showing much the same
+information in a graphical form. The model is complex, and the plot helps to understand the
+skip connections and their impact on the number of filters in the decoder.
+'''
+
+# %%
 # example of defining a u-net encoder-decoder generator model
 from keras.initializers import RandomNormal
 from keras.models import Model
@@ -82,3 +124,12 @@ model = define_generator(image_shape)
 model.summary()
 # plot the model
 plot_model(model, to_file='generator_model_plot.png', show_shapes=True, show_layer_names=True)
+
+# %%
+'''
+Running the example first summarizes the model. The output of the model summary was
+omitted here for brevity. The model has a single input and output, but the skip connections
+make the summary difficult to read. A plot of the model is created showing much the same
+information in a graphical form. The model is complex, and the plot helps to understand the
+skip connections and their impact on the number of filters in the decoder.
+'''

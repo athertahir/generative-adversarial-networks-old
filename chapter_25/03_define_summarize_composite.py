@@ -1,3 +1,41 @@
+# %%
+'''
+## How to Implement Composite Models and Loss
+The generator models are not updated directly. Instead, the generator models are updated via
+composite models. An update to each generator model involves changes to the model weights
+based on four concerns:
+- Adversarial loss (L2 or mean squared error).
+- Identity loss (L1 or mean absolute error).
+- Forward cycle loss (L1 or mean absolute error).
+- Backward cycle loss (L1 or mean absolute error).
+The adversarial loss is the standard approach for updating the generator via the discriminator,
+although in this case, the least squares loss function is used instead of the negative log likelihood
+(e.g. binary cross-entropy). First, we can use our function to define the two generators and two
+discriminators used in the CycleGAN.
+'''
+
+# %%
+'''
+Summarizing and plotting the composite model is a bit of a mess as it does not help to see
+the inputs and outputs of the model clearly. We can summarize the inputs and outputs for each25.5. How to Implement Composite Models and Loss 540
+of the composite models below. Recall that we are sharing or reusing the same set of weights if
+a given model is used more than once in the composite model.
+
+- Generator-A Composite Model: Only Generator-A weights are trainable and weights
+for other models and not trainable.
+	* Adversarial: Domain-B → Generator-A → Domain-A → Discriminator-A → [real/fake]
+	* Identity: Domain-A → Generator-A → Domain-A
+	* Forward Cycle: Domain-B → Generator-A → Domain-A → Generator-B → Domain-B
+	* Backward Cycle: Domain-A → Generator-B → Domain-B → Generator-A → Domain-A
+
+- Generator-B Composite Model: Only Generator-B weights are trainable and weights
+for other models are not trainable.
+	* Adversarial: Domain-A → Generator-B → Domain-B → Discriminator-B → [real/fake]
+	* Identity: Domain-B → Generator-B → Domain-B
+	* Forward Cycle: Domain-A → Generator-B → Domain-B → Generator-A → Domain-A
+	* Backward Cycle: Domain-B → Generator-A → Domain-A → Generator-B → Domain-B
+'''
+
 # example of defining composite models for training cyclegan generators
 from keras.optimizers import Adam
 from keras.models import Model
