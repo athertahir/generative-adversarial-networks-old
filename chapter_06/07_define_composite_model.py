@@ -1,3 +1,18 @@
+# %%
+'''
+## 
+'''
+
+# %%
+
+
+# %%
+'''
+
+'''
+
+
+# %%
 # demonstrate creating the three models in the gan
 from keras.models import Sequential
 from keras.layers import Dense

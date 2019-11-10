@@ -1,3 +1,18 @@
+# %%
+'''
+## 
+'''
+
+# %%
+
+
+# %%
+'''
+
+'''
+
+
+# %%
 # define and use the generator model
 from numpy.random import randn
 from keras.models import Sequential

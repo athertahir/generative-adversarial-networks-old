@@ -1,3 +1,18 @@
+# %%
+'''
+## 
+'''
+
+# %%
+
+
+# %%
+'''
+
+'''
+
+
+# %%
 # example of generating random samples from X^2
 from numpy.random import rand
 from numpy import hstack

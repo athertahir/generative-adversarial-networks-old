@@ -1,3 +1,22 @@
+# %%
+'''
+## How To Train a Stable GAN
+In this section, we will train a stable GAN to generate images of a handwritten digit. Specifically,
+we will use the digit ‘8’ from the MNIST handwritten digit dataset. The results of this model
+will establish both a stable GAN that can be used for later experimentation and a profile for
+what generated images and learning curves look like for a stable GAN training process.
+The first step is to define the models. The discriminator model takes as input one 28 × 28
+grayscale image and outputs a binary prediction as to whether the image is real (class = 1) or
+fake (class = 0). It is implemented as a modest convolutional neural network using best practices
+for GAN design such as using the LeakyReLU activation function with a slope of 0.2, batch
+normalization, using a 2 × 2 stride to downsample, and the adam version of stochastic gradient
+descent with a learning rate of 0.0002 and a momentum of 0.5 The define discriminator()
+function below implements this, defining and compiling the discriminator model and returning
+it. The input shape of the image is parameterized as a default function argument to make it
+clear.
+'''
+
+# %%
 # example of training a stable gan for generating a handwritten digit
 from os import makedirs
 from numpy import expand_dims

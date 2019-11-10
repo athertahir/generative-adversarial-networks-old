@@ -1,3 +1,18 @@
+# %%
+'''
+## 
+'''
+
+# %%
+
+
+# %%
+'''
+
+'''
+
+
+# %%
 # demonstrate simple x^2 function
 %matplotlib notebook
 from matplotlib import pyplot

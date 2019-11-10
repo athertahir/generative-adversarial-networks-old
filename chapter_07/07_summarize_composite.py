@@ -1,3 +1,16 @@
+# %%
+'''
+Making the discriminator not trainable is a clever trick in the Keras API. The trainable
+property impacts the model when it is compiled. The discriminator model was compiled with
+trainable layers, therefore the model weights in those layers will be updated when the standalone
+model is updated via calls to train on batch(). The discriminator model was marked as not
+trainable, added to the GAN model, and compiled. In this model, the model weights of the
+discriminator model are not trainable and cannot be changed when the GAN model is updated
+via calls to train on batch(). The complete example of creating the discriminator, generator,
+and composite model is listed below.
+'''
+
+# %%
 # demonstrate creating the three models in the gan
 from keras.optimizers import Adam
 from keras.models import Sequential
