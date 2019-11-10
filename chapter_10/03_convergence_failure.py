@@ -17,7 +17,12 @@ from keras.layers import Conv2DTranspose
 from keras.layers import LeakyReLU
 from keras.layers import BatchNormalization
 from keras.initializers import RandomNormal
-%matplotlib notebook
+
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+import warnings
+warnings.simplefilter("ignore")
+
 from matplotlib import pyplot
 
 # define the standalone discriminator model

@@ -16,7 +16,10 @@ from keras.layers import Activation
 from keras.layers import LeakyReLU
 from keras.layers import BatchNormalization
 from keras.initializers import RandomNormal
-%matplotlib notebook
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+import warnings
+warnings.simplefilter("ignore")
 from matplotlib import pyplot
 
 # define the standalone discriminator model
@@ -188,7 +191,7 @@ def train(g_model, d_model, gan_model, dataset, latent_dim, n_epochs=20, n_batch
 	plot_history(d1_hist, d2_hist, g_hist)
 
 # size of the latent space
-latent_dim = 100
+latent_dim = 2
 # create the discriminator
 discriminator = define_discriminator()
 # create the generator

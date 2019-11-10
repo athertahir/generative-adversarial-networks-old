@@ -10,6 +10,11 @@ from keras.applications.inception_v3 import InceptionV3
 from keras.applications.inception_v3 import preprocess_input
 from skimage.transform import resize
 
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+import warnings
+warnings.simplefilter("ignore")
+
 # scale an array of images to a new size
 def scale_images(images, new_shape):
 	images_list = list()

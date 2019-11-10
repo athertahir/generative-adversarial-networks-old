@@ -6,6 +6,11 @@ from numpy import iscomplexobj
 from numpy.random import random
 from scipy.linalg import sqrtm
 
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+import warnings
+warnings.simplefilter("ignore")
+
 # calculate frechet inception distance
 def calculate_fid(act1, act2):
 	# calculate mean and covariance statistics
