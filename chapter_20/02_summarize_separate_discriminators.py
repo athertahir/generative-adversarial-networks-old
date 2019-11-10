@@ -1,3 +1,24 @@
+# %%
+'''
+## Separate Discriminator Models With Shared Weights
+Starting with the standard GAN discriminator model, we can update it to create two models
+that share feature extraction weights. Specifically, we can define one classifier model that
+predicts whether an input image is real or fake, and a second classifier model that predicts the
+class of a given model.
+
+❼ Binary Classifier Model. Predicts whether the image is real or fake, sigmoid activation
+function in the output layer, and optimized using the binary cross-entropy loss function.
+❼ Multiclass Classifier Model. Predicts the class of the image, softmax activation
+function in the output layer, and optimized using the categorical cross-entropy loss
+function.
+
+Both models have different output layers but share all feature extraction layers. This means
+that updates to one of the classifier models will impact both models. The example below creates
+the traditional discriminator model with binary output first, then re-uses the feature extraction
+layers and creates a new multiclass prediction model, in this case with 10 classes
+'''
+
+# %%
 # example of defining semi-supervised discriminator model
 from keras.models import Model
 from keras.layers import Input

@@ -1,3 +1,17 @@
+# %%
+'''
+## Stacked Discriminator Models With Shared Weights
+A final approach is very similar to the prior two semi-supervised approaches and involves creating
+separate logical unsupervised and supervised models but attempts to reuse the output layers of
+one model to feed as input into another model. The approach is based on the definition of the
+semi-supervised model in the 2016 paper by Tim Salimans, et al. from OpenAI titled Improved
+Techniques for Training GANs. In the paper, they describe an efficient implementation, where
+first the supervised model is created with K output classes and a softmax activation function.
+The unsupervised model is then defined that takes the output of the supervised model prior to
+the softmax activation, then calculates a normalized sum of the exponential outputs.
+'''
+
+# %%
 # example of defining semi-supervised discriminator model
 from keras.models import Model
 from keras.layers import Input

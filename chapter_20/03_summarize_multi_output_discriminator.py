@@ -1,3 +1,24 @@
+# %%
+'''
+## Single Discriminator Model With Multiple Outputs
+Another approach to implementing the semi-supervised discriminator model is to have a single
+model with multiple output layers. Specifically, this is a single model with one output layer for
+the unsupervised task and one output layer for the supervised task. This is like having separate
+models for the supervised and unsupervised tasks in that they both share the same feature
+extraction layers, except that in this case, each input image always has two output predictions,
+specifically a real/fake prediction and a supervised class prediction.
+A problem with this approach is that when the model is updated with unlabeled and
+generated images, there is no supervised class label. In that case, these images must have an
+output label of unknown or fake from the supervised output. This means that an additional
+class label is required for the supervised output layer. The example below implements the
+multi-output single model approach for the discriminator model in the semi-supervised GAN
+architecture. We can see that the model is defined with two output layers and that the output
+layer for the supervised task is defined with n classes + 1, in this case 11, making room for
+the additional unknown class label. We can also see that the model is compiled to two loss
+functions, one for each output layer of the model.
+'''
+
+# %%
 # example of defining semi-supervised discriminator model
 from keras.models import Model
 from keras.layers import Input

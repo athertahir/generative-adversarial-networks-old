@@ -1,3 +1,30 @@
+# %%
+'''
+## AC-GAN Discriminator Model
+Let’s start with the discriminator model. The discriminator model must take as input an
+image and predict both the probability of the realness of the image and the probability of the
+image belonging to each of the given classes. The input images will have the shape 28 × 28 × 1
+and there are 10 classes for the items of clothing in the Fashion-MNIST dataset. The model
+can be defined as per the DCGAN architecture. That is, using Gaussian weight initialization,
+BatchNormalization, LeakyReLU, Dropout, and a 2 × 2 stride for downsampling instead of
+pooling layers. For example, below is the bulk of the discriminator model defined using the
+Keras functional API.
+'''
+
+# %%
+'''
+The model must be trained with two loss functions, binary cross-entropy for the first output
+layer, and categorical cross-entropy loss for the second output layer. Rather than comparing a
+one hot encoding of the class labels to the second output layer, as we might do normally, we can
+compare the integer class labels directly. We can achieve this automatically using the sparse
+categorical cross-entropy loss function. This will have the identical effect of the categorical
+cross-entropy but avoids the step of having to manually one hot encode the target labels. When
+compiling the model, we can inform Keras to use the two different loss functions for the two
+output layers by specifying a list of function names as strings
+'''
+
+
+# %%
 # example of defining the discriminator model
 from keras.models import Model
 from keras.layers import Input

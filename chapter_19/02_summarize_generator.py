@@ -1,3 +1,18 @@
+# %%
+'''
+## AC-GAN Generator Model
+The generator model must take a random point from the latent space as input, and the class
+label, then output a generated grayscale image with the shape 28 × 28 × 1. The AC-GAN paper
+describes the AC-GAN generator model taking a vector input that is a concatenation of the
+point in latent space (100 dimensions) and the one hot encoded class label (10 dimensions)
+that is 110 dimensions. An alternative approach that has proven effective and is now generally
+recommended is to interpret the class label as an additional channel or feature map early in the
+generator model. This can be achieved by using a learned embedding with an arbitrary number
+of dimensions (e.g. 50), the output of which can be interpreted by a fully connected layer with
+a linear activation resulting in one additional 7 × 7 feature map.
+'''
+
+# %%
 # example of defining the generator model
 from keras.models import Model
 from keras.layers import Input
